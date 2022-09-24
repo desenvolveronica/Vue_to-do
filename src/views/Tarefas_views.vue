@@ -5,10 +5,11 @@
           sm="6"
         >
           <v-text-field
-            v-model="message4"
-            label="Outlined"
+            v-model="campoInput"
+            label="Digite sua nova tarefa"
             outlined
             clearable
+            @keyup.enter="handleAddTarefa"
           ></v-text-field>
         </v-col>
     <v-list
@@ -16,7 +17,6 @@
       subheader
     >
       <v-list-item-group
-        v-model="settings"
         multiple
         active-class=""
       >
@@ -43,12 +43,24 @@ import Tarefa from '../components/tarefas/NovaTarefa.vue'
 },
   data(){
     return {
+      campoInput: null,
       tarefas:[
         {titulo: 'Estudar PHP', concluido: false},
         {titulo: 'Estudar Vue', concluido: false}, 
         {titulo: 'Caminhar', concluido: false}, 
 
       ]
+    }
+  }, 
+  methods:{
+    handleAddTarefa(){
+      if(this.campoInput){
+        this.tarefas.push({
+          titulo:this.campoInput,
+          concluido: false
+        })
+        this.campoInput = ''
+      }
     }
   }
   }
