@@ -1,14 +1,26 @@
 <template>
-  <div id="app">Tarefas</div>
+  <div>
+    <v-list
+      flat
+      subheader
+    >
+      <v-list-item-group
+        v-model="settings"
+        multiple
+        active-class=""
+      >
+       <Tarefa />
+      </v-list-item-group>
+    </v-list>
+  </div>
 </template>
 
 <script>
-  // import HelloWorld from '../components/HelloWorld'
-
+import Tarefa from '../components/tarefas/NovaTarefa.vue'
   export default {
-    // name: 'Home',
-
+    
     components: {
-    },
+    Tarefa,
+},
   }
 </script>
