@@ -1,5 +1,16 @@
 <template>
   <div>
+    <v-col
+          cols="12"
+          sm="6"
+        >
+          <v-text-field
+            v-model="message4"
+            label="Outlined"
+            outlined
+            clearable
+          ></v-text-field>
+        </v-col>
     <v-list
       flat
       subheader
