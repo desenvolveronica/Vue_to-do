@@ -52,16 +52,7 @@ import Tarefa from '../components/tarefas/NovaTarefa.vue'
       ]
     }
   }, 
-  methods:{
-    handleAddTarefa(){
-      if(this.campoInput){
-        this.tarefas.push({
-          titulo:this.campoInput,
-          concluido: false
-        })
-        this.campoInput = ''
-      }
-    }
-  }
+
+  
   }
 </script>
