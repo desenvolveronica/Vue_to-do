@@ -9,7 +9,15 @@
         multiple
         active-class=""
       >
-       <Tarefa />
+      <div
+      v-for="tarefa, index in tarefas"
+      :key="index"
+      >
+        <Tarefa 
+        :tarefa = 'tarefa'
+        />
+      </div>
+      
       </v-list-item-group>
     </v-list>
   </div>
@@ -20,7 +28,17 @@ import Tarefa from '../components/tarefas/NovaTarefa.vue'
   export default {
     
     components: {
-    Tarefa,
+     Tarefa,
 },
+  data(){
+    return {
+      tarefas:[
+        {titulo: 'Estudar PHP', concluido: false},
+        {titulo: 'Estudar Vue', concluido: false}, 
+        {titulo: 'Caminhar', concluido: false}, 
+
+      ]
+    }
+  }
   }
 </script>
