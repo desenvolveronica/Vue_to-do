@@ -1,7 +1,7 @@
 <template>
   <div>
           <v-list-item
-          :class="{'blue lighten-4' :tarefa.concluido}"
+          :class="{'blue lighten-4'  :tarefa.concluido}"
           @click="changeValue"
           >
           <template v-slot:default="{  }">
@@ -10,7 +10,7 @@
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-list-item-title>{{tarefa.titulo}}</v-list-item-title>
+              <v-list-item-title :class="{'text-decoration-line-through' :tarefa.concluido}">{{tarefa.titulo}}</v-list-item-title>
             </v-list-item-content>
           </template>
         </v-list-item>
