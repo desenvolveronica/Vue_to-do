@@ -49,17 +49,10 @@ import Tarefa from '../components/tarefas/NovaTarefa.vue'
   methods: {
 
     handleAddTarefa(){
-      if(this.campoInput){
-        this.tarefa.push({
-          titulo:this.campoInput,
-          concluido: false
-        })
+        this.$store.commit('adicionaTarefa', this.campoInput)
         this.campoInput = null
-      }
+      
     }
-
   }
-
-  
   }
 </script>
