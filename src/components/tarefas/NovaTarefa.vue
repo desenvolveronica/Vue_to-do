@@ -19,7 +19,7 @@
             <!-- Ícone para excluir -->
             <v-list-item-action>
               <v-btn icon>
-                <v-icon color="pink lighten-2" @click.stop = 'handleRemoveTarefa(tarefa.id)'
+                <v-icon color="pink lighten-2" @click = 'handleRemoveTarefa(tarefa.id)'
                 >mdi-trash-can</v-icon>
               </v-btn>
           </v-list-item-action>
