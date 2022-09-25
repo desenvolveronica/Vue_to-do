@@ -20,7 +20,7 @@
         active-class=""
       >
       <div
-      v-for="tarefa, index in tarefas"
+      v-for="tarefa, index in $store.state.tarefas"
       :key="index"
       >
         <Tarefa 
@@ -43,14 +43,22 @@ import Tarefa from '../components/tarefas/NovaTarefa.vue'
   data(){
     return {
       campoInput: null,
-      tarefas:[
-        {titulo: 'Estudar PHP', concluido: false},
-        {titulo: 'Estudar Vue', concluido: false}, 
-        {titulo: 'Caminhar', concluido: false}, 
-
-      ]
+      
     }
   }, 
+  methods: {
+
+    handleAddTarefa(){
+      if(this.campoInput){
+        this.tarefa.push({
+          titulo:this.campoInput,
+          concluido: false
+        })
+        this.campoInput = null
+      }
+    }
+
+  }
 
   
   }
