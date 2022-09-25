@@ -5,15 +5,27 @@
           @click="changeValue"
           >
           <template v-slot:default="{  }">
+            <!-- Ícone de chackbox -->
             <v-list-item-action>
               <v-checkbox :input-value="tarefa.concluido"></v-checkbox>
             </v-list-item-action>
 
+            <!-- Tarefas -->
             <v-list-item-content>
-              <v-list-item-title :class="{'text-decoration-line-through' :tarefa.concluido}">{{tarefa.titulo}}</v-list-item-title>
+              <v-list-item-title :class="{'text-decoration-line-through' :tarefa.concluido}"
+              >{{tarefa.titulo}}</v-list-item-title>
             </v-list-item-content>
+
+            <!-- Ícone para excluir -->
+            <v-list-item-action>
+              <v-btn icon>
+                <v-icon color="grey lighten-1" @click.stop = 'handleRemoveTarefa(tarefa.id)'
+                >mdi-information</v-icon>
+              </v-btn>
+          </v-list-item-action>
           </template>
         </v-list-item>
+        <v-divider style="background-color: pink"></v-divider>
   </div>
 </template>
 
@@ -30,6 +42,9 @@ export default {
         methods: {
           changeValue() {
             this.tarefaR.concluido = !this.tarefaR.concluido
+          }, 
+          handleRemoveTarefa(id){
+            this.$store.commit('removeTarefa' , id)
           }
         }
     }
