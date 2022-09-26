@@ -13,14 +13,18 @@
           <v-list-item
                     v-for="(item, index) in items"
                     :key="index"
-                    @click=item.click
+                    @click=item.click()
+
           >         <v-icon left>{{item.icon}}</v-icon>
                     <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item>
           </v-list>
           </v-menu>
           <!-- import modal -->
-     <ModalEditar/>
+     <ModalEditar
+     v-if="items[0].modal"
+    @fechaModal="items[0].modal = false"
+     />  <!-- :tarefa="tarefa" -->
 
   </div>
 </template>
@@ -29,13 +33,16 @@
 import ModalEditar from '../modal/ModalEditar.vue'
  export default {
   components: { ModalEditar },
+
     data: () => ({
       items: [
         { icon: 
           'mdi-pencil', 
           title: 'Editar',
+          modal: false,
           click(){
-                    console.log('editar')
+                    console.log('ola')
+                    this.modal = true
           }
          },
 
@@ -44,11 +51,13 @@ import ModalEditar from '../modal/ModalEditar.vue'
           title: 'Excluir',
           click(){
                     console.log('Excluir')
+                    
           }
         },
 
       ],
     }),
+   
   }
 </script>
 
