@@ -13,21 +13,39 @@
           <v-list-item
                     v-for="(item, index) in items"
                     :key="index"
+                    @click=item.click
           >         <v-icon left>{{item.icon}}</v-icon>
                     <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item>
           </v-list>
           </v-menu>
+          <!-- import modal -->
+     <ModalEditar/>
 
   </div>
 </template>
 
 <script>
+import ModalEditar from '../modal/ModalEditar.vue'
  export default {
+  components: { ModalEditar },
     data: () => ({
       items: [
-        { icon: 'mdi-pencil', title: 'Editar' },
-        { icon: 'mdi-trash-can', title: 'Excluir' },
+        { icon: 
+          'mdi-pencil', 
+          title: 'Editar',
+          click(){
+                    console.log('editar')
+          }
+         },
+
+        { icon: 
+          'mdi-trash-can', 
+          title: 'Excluir',
+          click(){
+                    console.log('Excluir')
+          }
+        },
 
       ],
     }),
