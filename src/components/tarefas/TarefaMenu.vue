@@ -23,7 +23,7 @@
           <!-- import modal -->
      <ModalEditar
      v-if="items[0].modal"
-    @fechaModal="items[0].modal = false"
+    @fechaModal = "items[0].modal = false"
      />  <!-- :tarefa="tarefa" -->
 
   </div>

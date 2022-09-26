@@ -27,14 +27,14 @@
           <v-btn
             color="red dark-1"
             text
-            @click="dialog = false"
+            @click="$emit('fechaModal')"
           >
             Cancelar
           </v-btn>
           <v-btn
             color="primary"
             text
-            @click="dialog = false"
+            @click="dialog = true"
           >
             Editar
           </v-btn>
