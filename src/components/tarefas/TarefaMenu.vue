@@ -3,13 +3,11 @@
           <v-menu offset-y>
           <template v-slot:activator="{ on, attrs }">
           <v-btn
-                    color="primary"
-                    dark
-                    v-bind="attrs"
-                    v-on="on"
-          >
-                    Menu
-          </v-btn>
+            color="primary"
+            dark
+            v-bind="attrs"
+             v-on="on"
+          >Menu</v-btn>
           </template>
           <v-list>
           <v-list-item

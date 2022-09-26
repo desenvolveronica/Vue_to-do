@@ -18,10 +18,12 @@
 
             <!-- Ícone para excluir -->
             <v-list-item-action>
-              <v-btn icon>
+              <!-- <v-btn icon>
                 <v-icon color="pink lighten-2" @click = 'handleRemoveTarefa(tarefa.id)'
                 >mdi-trash-can</v-icon>
-              </v-btn>
+              </v-btn> -->
+              <TarefaMenu/>
+
           </v-list-item-action>
           </template>
         </v-list-item>
@@ -30,8 +32,12 @@
 </template>
 
 <script>
-
+import TarefaMenu from './TarefaMenu.vue'
 export default {
+        components: {
+            TarefaMenu,
+        },
+
         name: 'TarefaC',
         props: ['tarefa'],
         data() {
