@@ -24,16 +24,17 @@
      <ModalEditar
      v-if="items[0].modal"
     @fechaModal = "items[0].modal = false"
-     />  <!-- :tarefa="tarefa" -->
+    :tarefa = "tarefa" />
 
   </div>
 </template>
 
 <script>
 import ModalEditar from '../modal/ModalEditar.vue'
+
  export default {
   components: { ModalEditar },
-
+  props: ['tarefa'],
     data: () => ({
       items: [
         { icon: 
@@ -57,6 +58,8 @@ import ModalEditar from '../modal/ModalEditar.vue'
 
       ],
     }),
+
+ 
    
   }
 </script>
