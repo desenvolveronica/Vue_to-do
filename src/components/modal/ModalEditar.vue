@@ -19,6 +19,7 @@
                   label="Titulo"
                   outlined
                   v-model="titulo"
+                  value="this.titulo"
                   ></v-text-field>
         
                   <v-card-actions>

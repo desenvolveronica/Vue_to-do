@@ -37,8 +37,7 @@ import ModalEditar from '../modal/ModalEditar.vue'
   props: ['tarefa'],
     data: () => ({
       items: [
-        { icon: 
-          'mdi-pencil', 
+        { icon: 'mdi-pencil', 
           title: 'Editar',
           modal: false,
           click(){

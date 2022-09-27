@@ -22,7 +22,8 @@
                 <v-icon color="pink lighten-2" @click = 'handleRemoveTarefa(tarefa.id)'
                 >mdi-trash-can</v-icon>
               </v-btn> -->
-              <TarefaMenu/>
+
+            <TarefaMenu/>
 
           </v-list-item-action>
           </template>
